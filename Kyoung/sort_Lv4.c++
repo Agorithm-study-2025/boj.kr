@@ -12,10 +12,10 @@ vector<int> solution(vector<int> answers) {
     vector<int> second = {2,1,2,3,2,4,2,5};
     vector<int> third = {3,3,1,1,2,2,4,4,5,5};
     vector<int> answer;
-    vector<int>matchCnt(3);
+    vector<int>matchCnt(3); // 최종 후보보
     for(int i = 0; i<answers.size(); i++)
     {
-        if(answers[i] == first[i % first.size()]){
+        if(answers[i] == first[i % first.size()]){ // 모듈러 패턴을 이용하여 무한 반복
             matchCnt[0] ++;
         }
         if(answers[i] == second[i % second.size()])
