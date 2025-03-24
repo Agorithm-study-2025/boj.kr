@@ -1,3 +1,4 @@
+// 두 수를 뽑아서 더하기
 #include <string>
 #include <vector>
 #include <set>
