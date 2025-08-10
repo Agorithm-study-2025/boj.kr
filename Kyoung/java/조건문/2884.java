@@ -7,26 +7,29 @@ public class Main {
     public static void main(String[] args) throws Exception{
         //
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bew = new BufferedWriter(new OutputStreamWriter(System.out));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 
-        int a = parseInt(br.readLine());
-        int b = parseInt(br.readLine());
-	
-	int time = b - 45;
-       	if(time >=0){
-		System.out.print(a + " " + time);
-	}
-	else{
-		ch_time = 60 + time;
-		if(a == 0){
-			a = 24 - 1;
-			System.out.print(a + " " + ch_time);
-		}
-		else if(a !=0){
-			a = a - 1;
-			System.out.print(a + " " + ch_time);
-		}	
-	}
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+
+        int time = b - 45;
+        if(time >=0){
+            bw.write(a + " " + time);
+        }
+        else{
+            int ch_time = 60 + time;
+            if(a == 0){
+                a = 24 - 1;
+                bw.write(a + " " + ch_time);
+            }
+            else if(a !=0){
+                a = a - 1;
+                bw.write(a + " " + ch_time);
+            }
+        }
+        bw.flush();
     }
 }
