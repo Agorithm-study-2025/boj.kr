@@ -9,28 +9,32 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int [] arr = new int[9];
-        for(int i = 0; i<9; i++)
+        String str = br.readLine();
+
+        int [] arr = new int[26];
+
+        for(int i = 0; i<arr.length; i++)
         {
-            arr[i] = Integer.parseInt(br.readLine());
+            arr[i] = -1;
         }
 
-        int max = 0;
-        int num = 0;
-
-        for(int i = 0; i<9; i++)
+        for(int i = 0; i<str.length(); i++)
         {
-            if(max < arr[i])
+            int tmp = str.charAt(i) - 'a';
+            if(arr[tmp] != -1)
             {
-                max = arr[i];
-                num = i+1;
+                continue;
             }
+            arr[tmp] = i;
         }
 
-        bw.write(String.valueOf(max));
-        bw.newLine();
-        bw.write(String.valueOf(num));
+        for(int i = 0; i<arr.length; i++)
+        {
+            bw.write(String.valueOf(arr[i]) + " ");
+        }
 
         bw.flush();
     }
 }
+
+

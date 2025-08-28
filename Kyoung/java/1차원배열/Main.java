@@ -9,17 +9,21 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int n = Integer.parseInt(br.readLine());
-        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int x = Integer.parseInt(st.nextToken());
 
-        int sum = 0;
+        st = new StringTokenizer(br.readLine());
+        int [] arr = new int[n];
         for(int i = 0; i<n; i++)
         {
-            sum +=str.charAt(i) - '0';
+            int tmp = Integer.parseInt(st.nextToken()); // 값
+
+            if(tmp < x)
+                bw.write(String.valueOf(tmp) + " ");
         }
 
-        bw.write(String.valueOf(sum));
+
         bw.flush();
     }
 }
-

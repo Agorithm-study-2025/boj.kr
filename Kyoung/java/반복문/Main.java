@@ -10,21 +10,21 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int X = Integer.parseInt(br.readLine());
-        int [] arr = new int[X];
 
         for(int i = 0; i<X; i++)
         {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            arr[i] = a+b;
-        }
+            for(int j = X-i; j>1; j--)
+            {
+                bw.write(" ");
+            }
 
-        for(int i = 0; i<X; i++){
-            
-            bw.write("Case #" + (i+1) + ": " + String.valueOf(arr[i]));
+            for(int k = 0; k<=i; k++)
+            {
+                bw.write("*");
+            }
             bw.newLine();
         }
+
 
         bw.flush();
     }
